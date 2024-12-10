@@ -38,28 +38,28 @@ The dataset contains 87 columns, with information primarily related to URLs and 
 19.	page_rank: PageRank score of the URL.
 20.	status: Classification of the URL as "legitimate" or "phishing."
 # Preprocessing Steps: 
-Handling Missing Values:
+- **Handling Missing Values**:
 Some columns may have missing or null values (e.g., domain_age, web_traffic).
 Imputing missing values: For continuous variables like domain_age, we can use mean or median imputation. For categorical variables, use mode or a specific value like "unknown."
-Encoding Categorical Variables:
+- **Encoding Categorical Variables**:
 Variables like status (phishing vs. legitimate) need to be converted into numerical values.
 •	Label Encoding: Encode status as 1 for phishing and 0 for legitimate.
 •	One-hot encoding: If there are other categorical variables (e.g., domain-related information), consider one-hot encoding.
-  Feature Selection:
+ - **Feature Selection**:
 It’s important to reduce the number of irrelevant features, especially if some columns don’t contribute much to phishing detection.
-•	Correlation Analysis: You can drop highly correlated or irrelevant features using heatmap.
-•	Feature Importance: Use decision trees or random forests to get feature importance scores.
-•	PCA: PCA will be used to reduce the large number of features while preserving 95% of the variance. This will help improve model efficiency by focusing on the most critical factors, such as URL length, domain age, and page rank, which are key indicators of phishing behavior.
-  Splitting the Data: 
++ Correlation Analysis: You can drop highly correlated or irrelevant features using heatmap.
++ Feature Importance: Use decision trees or random forests to get feature importance scores.
++ PCA: PCA will be used to reduce the large number of features while preserving 95% of the variance. This will help improve model efficiency by focusing on the most critical factors, such as URL length, domain age, and page rank, which are key indicators of phishing behavior.
+- **Splitting the Data**: 
 Divide the dataset into training and testing sets (typically 80% training and 20% testing).
 # Data Visualization Techniques that will be further used:
 To gain an initial understanding of the dataset, the following data visualization techniques will be employed:
-•	Histograms: To explore the distribution of numeric features such as URL length, domain registration length, etc.
-•	Correlation Heatmap: To analyze the relationships between various features in the dataset.
-•	Bar Graphs: To visualize the distribution of phishing vs legitimate websites.
-•	Boxplots: To detect outliers and gain insight into the distribution of key numerical variables.
-#P rediction Techniques that will be used:
+1. Histograms: To explore the distribution of numeric features such as URL length, domain registration length, etc.
+2. Correlation Heatmap: To analyze the relationships between various features in the dataset.
+3. Bar Graphs: To visualize the distribution of phishing vs legitimate websites.
+4. Boxplots: To detect outliers and gain insight into the distribution of key numerical variables.
+# Prediction Techniques that have been used:
 The following machine learning algorithms will be used to build the phishing detection model:
-•	Logistic Regression: As a baseline classifier for binary classification.
-•	Random Forest Classifier: To leverage the power of decision trees and bagging for more accurate results.
-•	Decision Trees: Using decision trees, which learn decision rules based on important criteria like URL length, page rank, and domain registration length, this phishing detection model can identify websites as real or phishing. They are perfect for spotting phishing tendencies because they offer an understandable model that can manage intricate, non-linear interactions in the data.
+1. Logistic Regression: As a baseline classifier for binary classification.
+2. Random Forest Classifier: To leverage the power of decision trees and bagging for more accurate results.
+3. Decision Trees: Using decision trees, which learn decision rules based on important criteria like URL length, page rank, and domain registration length, this phishing detection model can identify websites as real or phishing. They are perfect for spotting phishing tendencies because they offer an understandable model that can manage intricate, non-linear interactions in the data.
